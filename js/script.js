@@ -11,19 +11,23 @@ let prezzoBase = km * 0.21;
 console.log("Il prezzo base del tuo biglietto è: ",prezzoBase);
 
 // 4. Calcolare PREZZO SCONTATO in base a Età
+// 5. Stampare PREZZO su File Html
 let prezzoScontato;
 
 if (eta < 18){
 
   prezzoScontato = prezzoBase * 0.8
   console.log("Il prezzo scontato per i minorenni è: ",prezzoScontato);
+  document.getElementById("costo").innerHTML = prezzoScontato.toFixed(2);
 
 } else if (eta > 65) {
 
     prezzoScontato = prezzoBase * 0.6;
     console.log("Il prezzo scontato per i senior è: ",prezzoScontato);
+    document.getElementById("costo").innerHTML = prezzoScontato.toFixed(2);
+
+} else {
+
+    document.getElementById("costo").innerHTML = prezzoBase.toFixed(2);  
+
 }
-
-
-
-// 5. Stampare PREZZO su File Html
